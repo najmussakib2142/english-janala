@@ -1,0 +1,31 @@
+.font-Poppins {
+    font-family: "Poppins", serif;
+}
+.tiro-bangla {
+    font-family: "Tiro Bangla", serif;
+}
+.hind-siliguri{
+    font-family: "Hind Siliguri", sans-serif;
+}
+
+.active{
+    background-color: #422AD5;
+    color: white;
+}
+
+.synonym-item{
+    background-color: #D7E4EF;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-right: 8px;
+}
+/*  */
+/* #hero-section { */
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* align-items: center;  */
+  /* } */
+/* .hero-logged-in{ */
+    /* justify-content: space-between; */
+/* } */
