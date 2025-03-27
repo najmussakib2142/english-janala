@@ -60,7 +60,7 @@
             </div>
         </nav>
         <!-- hero section -->
-        <section id="hero-section" class="w-11/12 mx-auto flex justify-between items-center">
+        <section id="hero-section" class="w-11/12 mx-auto lg:flex justify-between items-center">
             <div>
                 <h1 class="text-5xl font-semibold text-[#18181B] mb-4"><span class="text-[#00BCFF]">English</span> is Easy!!</h1>
                 <p class="hind-siliguri mb-7 text-[#18181B90] text-lg ">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা 
@@ -68,8 +68,8 @@
                     <br> যাবে অন্য একটি Level এ
                 </p>
                 <div class="flex flex-col w-3/5">
-                    <input value="aa" id="name" class="mb-3 text-sm px-2 py-2 rounded-md border-gray-400" type="text" placeholder="Enter Your Name">
-                    <input value="123456" class="text-sm px-2 py-2 rounded-md border-gray-400" type="password" name="" id="password" placeholder="Enter your password ex.123456">
+                    <input  id="name" class="mb-3 text-sm px-2 py-2 rounded-md border-gray-400" type="text" placeholder="Enter Your Name">
+                    <input  class="text-sm px-2 py-2 rounded-md border-gray-400" type="password" name="" id="password" placeholder="Enter your password ex.123456">
                 </div>
                 <button id="login-btn" class="bg-[#422AD5] text-white cursor-pointer text-base px-3 py-2 rounded-md mt-3">Get Started</button>
             </div>
@@ -85,7 +85,7 @@
             <h1 class="font-bold text-center text-[#18181B] text-3xl mb-8"><span class="text-[#00BCFF]">Let's</span> Learn Vocabularies</h1>
             <!-- lesson button -->
 
-            <nav id="lessons-container" class="flex justify-center gap-4 mb-16">
+            <nav id="lessons-container" class="flex flex-wrap justify-center gap-4 mb-16">
                 <!-- lessons btn here -->
             </nav>
         </section>
@@ -116,7 +116,7 @@
                     </div>
                     <div class="modal-action flex justify-start">
                         <form method="dialog" class="">
-                            <button class="bg-[#422AD5] text-white px-2 py-1 rounded-md border-none cursor-pointer">Complete Learning</button>
+                            <button class="bg-[#422AD5] text-white px-3 py-1 rounded-md border-none cursor-pointer font-normal">Complete Learning</button>
                         </form>
                     </div>
                 </div>
@@ -154,15 +154,16 @@
                     In JS map(), forEach(), and filter() are array methods. <br> <br>
 
                     forEach() do not return anything thats why we do not need
-                     to declare any variable and it will not change the original array and returns undefined. <br>
+                     to declare any variable and it will not change the original array <br> and returns undefined. <br>
+
                      map() executes the same code on every element
                       in an array and returns a new array with the transformed values,
-                      It will not change the original array. <br>
+                       <br> It will not change the original array. <br>
                     
                       filter() method receives function as a parameter.
-                      filter()method will return an array of matching elements else 
+                      filter()method will return an array of matching elements <br> else 
                     will return an empty array if no matching happens.
-                      It will not change the original array.
+                       It will not change the original array.
                 </div>
               </div>
 
@@ -175,7 +176,14 @@
                     </div>
                     <div class="collapse-content text-sm text-gray-600 leading-normal">
                         Arrow function is shorter compare with regular function and 
-                        it cannot be accessed before initialization
+                        it cannot be accessed before initialization. <br>
+                        
+                        Regular functions have access to the arguments object.
+                        Arrow functions do not have access to the arguments object.
+                        <br>
+                        Regular functions have their own this binding.
+                        Arrow functions don't have their own this binding, arguments object, or prototype.
+
                     </div>
                   </div>
 
@@ -187,10 +195,12 @@
                         4. How JavaScript Promises work?
                     </div>
                     <div class="collapse-content text-sm text-gray-600 leading-normal">
-                        var, let, and const are use to declare variables. <br>
-                        var can be re-declaration and updates within the same scope. <br>
-                        let allowing updates but not re-declaration within the same block. <br>
-                        const cannot be reassigned.
+                        A Promise is a JavaScript object that will produce a single value at some point in the future. <br>
+                        If the promise is fulfilled, it will provide a resolved value; 
+                         if not, it will return a cause for the failure. <br> It is used for handling asynchronous operations,
+                          such as making API calls or reading files, in a more organized and readable way. <br>
+                          Promises have three states: Pending, Fulfilled and Rejected. <br>
+                          Promises have two main methods: then(), catch().
                     </div>
                   </div>
 
@@ -202,16 +212,14 @@
                         5. How closures work in JavaScript?    
                     </div>
                     <div class="collapse-content text-sm text-gray-600 leading-normal">
-                        var, let, and const are use to declare variables. <br>
-                        var can be re-declaration and updates within the same scope. <br>
-                        let allowing updates but not re-declaration within the same block. <br>
-                        const cannot be reassigned.
+                        A closure is the combination of a function bundled together with references to its surrounding state. <br>In other words, a closure gives a function access to its outer scope. Closures are created every time a function is created, <br>
+                         at run time. Closure is just a fancy name for a function that remembers the external things used inside it.
                     </div>
                   </div>
         </section>
     </main>
 
-    <footer class="border-[#FFEBEB] border-t mb-11">
+    <footer id="footer-section" class="border-[#FFEBEB] border-t mb-11">
         <div class="w-11/12 mx-auto mt-5 flex justify-between items-end py-10">
             <div class="">
                 <h2 class="flex items-center text-xl gap-1 mb-3"><legend class="font-semibold">English</legend> <span><img src="assets/logo.png" alt=""></span> <legend class="tiro-bangla">জানালা</legend></h2>

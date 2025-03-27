@@ -26,6 +26,7 @@ document.getElementById('login-btn').addEventListener('click', function(){
     document.getElementById('nav-bar').style.display = 'block'
     document.getElementById('main-section').style.display = 'block'
     document.getElementById('hero-section').style.display = 'none'
+    document.getElementById('footer-section').style.display = 'none'
 
     Swal.fire({
         title: "login successfully!",
@@ -41,7 +42,7 @@ document.getElementById('logout-btn').addEventListener('click', function(){
         title: 'Are you sure you want to logout?',
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonColor: '#3085d6',
+        confirmButtonColor: '#422AD5',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes, logout!'
       })
@@ -52,6 +53,8 @@ document.getElementById('logout-btn').addEventListener('click', function(){
         document.getElementById('main-section').style.display = 'none'
         document.getElementById('hero-section').style.display = 'block'
         document.getElementById('hero-section').style.display = 'flex'
+        document.getElementById('footer-section').style.display = 'block'
+
         Swal.fire({
             icon: 'success',
             title: 'Logged out!',
@@ -140,7 +143,7 @@ const displayLessons = (lessons) => {
     else{
 
     const gridContainer = document.createElement('div');
-    gridContainer.className = "grid grid-cols-3 gap-5 py-5 px-5"
+    gridContainer.className = "grid lg:grid-cols-3 md:grid-cols-2  grid-cols-1 gap-5 py-5 px-5"
 
     lessons.forEach((lesson) => {
         // console.log(lesson)
@@ -148,7 +151,7 @@ const displayLessons = (lessons) => {
         
         const div = document.createElement('div');
         div.innerHTML = `
-                    <div class="px-5 py-10 rounded-lg drop-shadow-sm bg-white">
+                    <div class="hover:border hover:border-[#EDF7FF] hover:shadow-md px-5 py-10 rounded-lg drop-shadow-sm bg-white ">
                         <div class=" items-center text-center">
                           <h2 class="text-xl font-semibold">${lesson.word} </h2>
                           <p>Meaning /Pronounciation</p>
@@ -158,7 +161,7 @@ const displayLessons = (lessons) => {
                         </div>
                         <div class="flex justify-between px-10 mt-9">
                             <i id="${lesson.id}" class="fa-solid fa-circle-info bg-[#1A91FF10] px-2 py-2 rounded-md hpver hover:text-[#422AD5] cursor-pointer"></i>
-                            <i class="fa-solid fa-volume-high bg-[#1A91FF10] px-2 py-2 rounded-md hpver hover:text-[#422AD5] cursor-pointer"></i>
+                            <i id="${lesson.id}" class="fa-solid fa-volume-high bg-[#1A91FF10] px-2 py-2 rounded-md hpver hover:text-[#422AD5] cursor-pointer"></i>
                           </div>
                     </div>
         `;
@@ -173,9 +176,32 @@ const displayLessons = (lessons) => {
             const wordId = event.target.id;
             displayWordDetails(wordId)
         }
+        
     })
+    
 };
 
+
+//Click to play ++++++++++++++
+lessonsContainer.addEventListener('click', (event) => {
+    if(event.target.classList.contains('fa-volume-high')){
+        const wordId = event.target.id;
+        playSound(wordId)
+    }
+    
+})
+const playSound = (id) =>{
+    fetch(`https://openapi.programming-hero.com/api/word/${id}`)
+    .then(res => res.json())
+    .then(data => pronounceWord(data.data.word))
+}
+function pronounceWord(word) {
+    const utterance = new SpeechSynthesisUtterance(word);
+    console.log(utterance)
+    utterance.lang = 'en-EN'; // English
+    window.speechSynthesis.speak(utterance);
+  }
+// ++++++++++++++
 
 // word details in modal
 const displayWordDetails = (id) =>{
@@ -239,3 +265,7 @@ document.getElementById('lessons-container')
     })
     document.getElementById('lessonsContainer').style.display= 'none'
 
+
+    // sound ______------
+
+ 
