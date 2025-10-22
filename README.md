@@ -1,6 +1,7 @@
 ### WELCOME TO ASSIGNMENT-006
 # ENGLISH <img width="25px" src="./assets/logo.png" /> JANALA
 
+## Live link: https://english-janala-a06-b11.netlify.app/
 ## Private Repo Link : https://classroom.github.com/a/JPUEMrmw
 
  **📅 Deadline For 60 marks**: 17th March , 2025 ( 11:59 pm ⏱️)
